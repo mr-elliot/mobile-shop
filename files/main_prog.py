@@ -3,21 +3,19 @@ from prettytable import PrettyTable
 
 def main_program(cur):
 
-    # cmd = """create table mobile_data ( Sl_No integer,
-    #         Brand varchar,	Model varchar,	Announced varchar,	Audio_jack varchar,	Battery varchar,
-    #         Bluetooth varchar,	CPU varchar,	Chipset varchar, Colors varchar, Dimensions varchar,Display_type varchar,
-    #         GPU varchar,	Internal_memory varchar,	Loud_speaker varchar,	Memory_card varchar,	Network varchar,	Operating_System varchar,
-    #         Primary_camera varchar,	RAM varchar,	Radio varchar,	SIM varchar,	Secondary_camera varchar,	Sensors varchar,
-    #         Status varchar,	USB varchar );"""
-    # cur.execute(cmd)
-    # conn.commit()
-    # cur.execute("copy mobile_data from '/home/android/Programs/sql/access_sql/upload1.csv' delimiter ',' csv header")
-    # conn.commit()
+    cmd = """create table mobile_data ( Sl_No integer,
+            Brand varchar,	Model varchar,	Announced varchar,	Audio_jack varchar,	Battery varchar,
+            Bluetooth varchar,	CPU varchar,	Chipset varchar, Colors varchar, Dimensions varchar,Display_type varchar,
+            GPU varchar,	Internal_memory varchar,	Loud_speaker varchar,	Memory_card varchar,	Network varchar,	Operating_System varchar,
+            Primary_camera varchar,	RAM varchar,	Radio varchar,	SIM varchar,	Secondary_camera varchar,	Sensors varchar,
+            Status varchar,	USB varchar );"""
+    cur.execute(cmd)
+    conn.commit()
+    cur.execute("copy mobile_data from '/home/android/Programs/sql/access_sql/upload1.csv' delimiter ',' csv header")
+    conn.commit()
     # cur.execute("select * from mobile_data")
-    # rows = cur.fetchall()
-    # for row in rows:
-    #     print(row)
 
+    # comment the above code if youre running the code seccond time or the database is already created
     # now we have uploded data now we need to perform task from the stored data
 
     while True:
