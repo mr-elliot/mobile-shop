@@ -1,16 +1,6 @@
-# article refered https://www.postgresqltutorial.com/postgresql-python/connect/     https://www.postgresqltutorial.com/postgresql-python/
-
 import psycopg2
 from config import config
 from main_prog import main_program
-
-
-
-# conn = psycopg2.connect(
-#     host="localhost",
-#     database="testdummy",
-#     user="sam",
-#     password="sam123")
 
 def connect():
     """ Connect to the PostgreSQL database server """
@@ -24,11 +14,9 @@ def connect():
 
         cur = conn.cursor()     # create a cursor
         ################################################################################################################
-        #       EVERY CODE COMES HERE       #
 
         main_program(cur)
 
-        #       EVERY CODE ENDS HERE        #
         ################################################################################################################
 
         conn.commit()  # commit the changes for database
