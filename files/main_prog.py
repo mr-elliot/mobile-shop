@@ -1,9 +1,10 @@
 from prettytable import PrettyTable
-
+# GIVE A NAME FOR THE TABLE
+# ie  "TABLE_NAME"
 
 def main_program(cur):
 
-    cmd = """create table mobile_data ( Sl_No integer,
+    cmd = """create table table_name ( Sl_No integer,
             Brand varchar,	Model varchar,	Announced varchar,	Audio_jack varchar,	Battery varchar,
             Bluetooth varchar,	CPU varchar,	Chipset varchar, Colors varchar, Dimensions varchar,Display_type varchar,
             GPU varchar,	Internal_memory varchar,	Loud_speaker varchar,	Memory_card varchar,	Network varchar,	Operating_System varchar,
@@ -11,9 +12,9 @@ def main_program(cur):
             Status varchar,	USB varchar );"""
     cur.execute(cmd)
     conn.commit()
-    cur.execute("copy mobile_data from 'location/of/file/upload1.csv' delimiter ',' csv header")
+    cur.execute("copy table_name from 'location/of/file/upload1.csv' delimiter ',' csv header")
     conn.commit()
-    # cur.execute("select * from mobile_data")
+    # cur.execute("select * from table_name")
 
     # comment the above code if youre running the code seccond time or the database is already created
     # now we have uploded data now we need to perform task from the stored data
@@ -47,7 +48,7 @@ def main_program(cur):
 
     dt = {1: 'Apple', 2: 'Asus', 3: 'Coolpad', 4: 'Google', 5: 'Lenovo', 6: 'Microsoft', 7: "Motorola", 8: "Nokia", 9: 'One plus', 10: 'Oppo', 11: 'Samsung', 12: 'Vivo', 13: 'Xiaomi'}
 
-    st = f"""select sl_no, brand, model from mobile_data where brand = '{dt[choice]}';"""
+    st = f"""select sl_no, brand, model from table_name where brand = '{dt[choice]}';"""
     cur.execute(st)
     rows = cur.fetchall()
 
@@ -57,7 +58,7 @@ def main_program(cur):
     print(table)
 
     numb = input("select the corresponding serial_number of the model you want the information of: \nNote if you need multiple model info enter numbers with separted by comma \n")
-    st1 = f"""select * from mobile_data where sl_no in ({numb});"""
+    st1 = f"""select * from table_name where sl_no in ({numb});"""
     cur.execute(st1)
     row = cur.fetchone()
     table1 = PrettyTable(['Sl_No', 'Brand', 'Model', 'Announced', 'Audio_jack', 'Battery', 'Bluetooth', 'CPU', 'Chipset', 'Colors', 'Dimensions', 'Display_type', 'GPU', 'Internal_memory', 'Loud_speaker', 'Memory_card', 'Network', 'Operating_System', 'Primary_camera', 'RAM', 'Radio', 'SIM', 'Secondary_camera', 'Sensors', 'Status', 'USB'])
