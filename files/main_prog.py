@@ -3,7 +3,7 @@ from prettytable import PrettyTable
 # ie  "TABLE_NAME"
 
 def main_program(cur):
-
+    # give table name here
     cmd = """create table table_name ( Sl_No integer,
             Brand varchar,	Model varchar,	Announced varchar,	Audio_jack varchar,	Battery varchar,
             Bluetooth varchar,	CPU varchar,	Chipset varchar, Colors varchar, Dimensions varchar,Display_type varchar,
@@ -12,9 +12,9 @@ def main_program(cur):
             Status varchar,	USB varchar );"""
     cur.execute(cmd)
     conn.commit()
-    cur.execute("copy table_name from 'location/of/file/upload1.csv' delimiter ',' csv header")
+    cur.execute("copy table_name from 'location/of/file/upload1.csv' delimiter ',' csv header")  # give table name here
     conn.commit()
-    # cur.execute("select * from table_name")
+    # cur.execute("select * from table_name")   # give table name here
 
     # comment the above code if youre running the code seccond time or the database is already created
     # now we have uploded data now we need to perform task from the stored data
@@ -48,7 +48,7 @@ def main_program(cur):
 
     dt = {1: 'Apple', 2: 'Asus', 3: 'Coolpad', 4: 'Google', 5: 'Lenovo', 6: 'Microsoft', 7: "Motorola", 8: "Nokia", 9: 'One plus', 10: 'Oppo', 11: 'Samsung', 12: 'Vivo', 13: 'Xiaomi'}
 
-    st = f"""select sl_no, brand, model from table_name where brand = '{dt[choice]}';"""
+    st = f"""select sl_no, brand, model from table_name where brand = '{dt[choice]}';"""         # give table name here
     cur.execute(st)
     rows = cur.fetchall()
 
