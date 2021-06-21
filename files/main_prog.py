@@ -11,7 +11,7 @@ def main_program(cur):
             Status varchar,	USB varchar );"""
     cur.execute(cmd)
     conn.commit()
-    cur.execute("copy mobile_data from '/home/android/Programs/sql/access_sql/upload1.csv' delimiter ',' csv header")
+    cur.execute("copy mobile_data from 'location/of/file/upload1.csv' delimiter ',' csv header")
     conn.commit()
     # cur.execute("select * from mobile_data")
 
