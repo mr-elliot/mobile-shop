@@ -14,4 +14,4 @@ copy mobile_data from '/location/of/file/upload1.csv' delimiter ',' csv header";
 
 select * from table_name;
 
-select * from mobile_data where brand = 'model_name'; -- enter the model name you want information of
+select * from table_name where model = 'model_name'; -- enter the model name you want information of
